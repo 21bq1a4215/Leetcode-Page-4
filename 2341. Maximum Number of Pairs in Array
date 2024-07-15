@@ -1,0 +1,10 @@
+from collections import Counter
+class Solution:
+    def numberOfPairs(self, nums: List[int]) -> List[int]:
+        pairs=0
+        remain=0
+        for i in Counter(nums).values():
+            pairs=pairs+i//2
+            remain=remain+i%2
+        return [pairs,remain]
+        
