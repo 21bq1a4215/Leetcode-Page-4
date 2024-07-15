@@ -1,0 +1,13 @@
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        a=len(word1)
+        b=len(word2)
+        if a>b:word2=word2+" "*(a-b)
+        elif b>a:word1=word1+" "*(b-1)
+        stack=[]
+        for k in range(max(a,b)):
+            stack.append(word1[k])
+            stack.append(word2[k])
+        return "".join(stack).replace(" ","")
+            
+        
