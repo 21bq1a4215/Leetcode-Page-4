@@ -1,0 +1,15 @@
+class Solution:
+    def isSumEqual(self, firstWord: str, secondWord: str, targetWord: str) -> bool:
+        n1=0
+        n2=0
+        for k in firstWord:
+            n1=n1*10+ord(k)-97
+        for k in secondWord:
+            n2=n2*10+ord(k)-97
+        n1=int(n1)+int(n2)
+        ans=0
+        for k in targetWord:
+            ans=ans*10+ord(k)-97
+        return True if ans==n1 else False
+            
+        
