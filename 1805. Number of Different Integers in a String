@@ -1,0 +1,10 @@
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        d=word[:]
+        for k in set(list(word)):
+            if k.isalpha():d=d.replace(k," ")
+        while "  " in d:
+            d=d.replace("  "," ")
+        return len(set(list(map(int,d.split()))))
+    
+            
