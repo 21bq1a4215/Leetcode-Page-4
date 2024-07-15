@@ -1,0 +1,9 @@
+from collections import Counter;
+class Solution:
+    def areOccurrencesEqual(self, s: str) -> bool:
+        a=s.count(s[0])
+        for i,j in Counter(s).items():
+            if j!=a:return False
+        return True
+            
+        
