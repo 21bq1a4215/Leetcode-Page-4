@@ -1,0 +1,8 @@
+
+class Solution:
+    def capitalizeTitle(self, title: str) -> str:
+        l=[]
+        for k in title.split():
+            if len(k)<3:l.append(k.lower())
+            else:l.append(k.title())
+        return " ".join(l)
