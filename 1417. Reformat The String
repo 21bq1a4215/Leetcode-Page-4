@@ -1,0 +1,25 @@
+class Solution:
+    def reformat(self, s: str) -> str:
+        d=[]
+        a=[]
+        
+        for k in s:d.append(k) if k.isdigit() else a.append(k)
+        if  abs(len(d)-len(a))>1:return ""
+        else:
+            ans=""
+            if len(d)>len(a):
+                ans=d.pop(0)
+                for k in range(len(a)):
+                    ans+=a.pop(0)+d.pop(0)
+            elif len(d)==len(a):
+                for k in range(len(a)):
+                    ans+=a.pop(0)+d.pop(0)
+            else:
+                ans=a.pop(0)
+                for k in range(len(d)):
+                    ans+=d.pop(0)+a.pop(0)
+        return ans
+            
+            
+        
+        
